@@ -32,7 +32,7 @@ const App = () => {
 
   console.log({infoApi});
   return(
-    <div>
+    <div style={{backgroundColor: '#fff'}}>
       <h1>Comida Favorita: {comidaFavorita}</h1>
       <h1>Rating: {rating}</h1>
       <p>Comida Favorita:</p>
