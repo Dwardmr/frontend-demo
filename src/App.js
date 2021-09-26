@@ -32,14 +32,16 @@ const App = () => {
 
   console.log({infoApi});
   return(
-    <div>
-      <h1>Comida Favorita: {comidaFavorita}</h1>
-      <h1>Rating: {rating}</h1>
+    <div style={{backgroundColor: '#fff'}}>
+      <h1 style={{color: 'red'}}>Comida Favorita: {comidaFavorita}</h1>
+      <h1 style={{color: 'red'}}>Rating: {rating}</h1>
       <p>Comida Favorita:</p>
       <input type="text" value={comidaFavorita} onChange={handleComidaFavorita} />
       <p>Rating (0-5)</p>
       <input type="number" value={rating} onChange={handleRating} />
       <button onClick={guardarInfoEnApi}>Guardar Info</button>
+      <hr />
+      <button>Presioname!</button>
     </div>
   );
 }
