@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect} from 'react';
+import { post } from './util/apiClient';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+  const [comidaFavorita, setComidaFavorita] = useState('');
+  const [rating, setRating] = useState(0);
+  const [infoApi, setInfoApi] = useState(null);
+
+  
+
+  useEffect(() => {
+    if(infoApi === null){
+      const comidasFavoritasAPI = post('/ComidaFavorita');
+      setInfoApi(comidasFavoritasAPI);
+    }
+  }, [infoApi]);
+
+  const handleComidaFavorita = (e) => {
+    setComidaFavorita(e.target.value);
+  }
+  const handleRating = (e) => {
+    setRating(e.target.value);
+  }
+
+  const guardarInfoEnApi = () => {
+    const informacionAGuardar = {
+      comidaFavoritaRating: comidaFavorita,
+      rating: Number(rating),
+    };
+
+    post('/ComidaFavorita', informacionAGuardar);
+  }
+
+  console.log({infoApi});
+  return(
+    <div>
+      <h1>Comida Favorita: {comidaFavorita}</h1>
+      <h1>Rating: {rating}</h1>
+      <p>Comida Favorita:</p>
+      <input type="text" value={comidaFavorita} onChange={handleComidaFavorita} />
+      <p>Rating (0-5)</p>
+      <input type="number" value={rating} onChange={handleRating} />
+      <button onClick={guardarInfoEnApi}>Guardar Info</button>
     </div>
   );
 }
-
 export default App;

@@ -1,0 +1,41 @@
+{
+  "ComidaFavorita": [
+    {
+      "id": 0,
+      "comidaFavoritaName": "Pizza",
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "comidaFavoritaName": "Pasta",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "comidaFavoritaName": "Helado",
+      "rating": 5
+    },
+    {
+      "id": 3
+    },
+    {
+      "comidaFavoritaRating": "baleadas",
+      "rating": 5,
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "comidaFavoritaRating": "limonada",
+      "rating": 2,
+      "id": 6
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 0,
+      "nombre": "Pedro3"
+    }
+  ]
+}
