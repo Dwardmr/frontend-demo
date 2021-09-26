@@ -40,6 +40,8 @@ const App = () => {
       <p>Rating (0-5)</p>
       <input type="number" value={rating} onChange={handleRating} />
       <button onClick={guardarInfoEnApi}>Guardar Info</button>
+      <hr />
+      <button>Presioname!</button>
     </div>
   );
 }
