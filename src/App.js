@@ -6,7 +6,7 @@ const App = () => {
   const [rating, setRating] = useState(0);
   const [infoApi, setInfoApi] = useState(null);
 
-  
+  //este es un comentario
 
   useEffect(() => {
     if(infoApi === null){
